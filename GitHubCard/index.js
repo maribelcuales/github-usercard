@@ -58,6 +58,7 @@ function githubCard(data) {
   const newCard = document.createElement('div'),
   cardImage = document.createElement('img'),
   cardInfo = document.createElement('div'),
+  cardName = document.createElement('h3'); 
   username = document.createElement('p'),
   location = document.createElement('p'),
   profile = document.createElement('p'),
