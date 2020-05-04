@@ -67,6 +67,17 @@ function githubCard(data) {
   following = document.createElement('p'),
   bio = document.createElement('p');
 
+  newCard.appendChild(cardImage);
+  newCard.appendChild(cardInfo);
+  cardInfo.appendChild(cardName);
+  cardInfo.appendChild(username);
+  cardInfo.appendChild(location);
+  cardInfo.appendChild(profile);
+  profile.appendChild(githubUrl);
+  cardInfo.appendChild(followers);
+  cardInfo.appendChild(following);
+  cardInfo.appendChild(bio); 
+
   return; 
 }
 
