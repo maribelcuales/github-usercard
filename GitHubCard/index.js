@@ -80,6 +80,11 @@ function githubCard(data) {
   cardInfo.appendChild(following);
   cardInfo.appendChild(bio); 
 
+  newCard.classList.add('card');
+  cardInfo.classList.add('card-info');
+  cardName.classList.add('name');
+  username.classList.add('username');
+
   return; 
 }
 
