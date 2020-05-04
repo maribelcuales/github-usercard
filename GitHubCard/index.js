@@ -5,6 +5,7 @@
 
 axios.get('https://api.github.com/users/maribelcuales')
   .then(response => {
+    console.log('data: ', response); 
 })
   .catch(error => {
 })
