@@ -8,6 +8,7 @@ axios.get('https://api.github.com/users/maribelcuales')
     console.log('data: ', response); 
 })
   .catch(error => {
+    console.log('the data was not returned', error); 
 })
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
