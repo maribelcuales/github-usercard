@@ -62,7 +62,7 @@ function githubCard(data) {
   username = document.createElement('p'),
   location = document.createElement('p'),
   profile = document.createElement('p'),
-  cardUrl = document.createElement('a'), 
+  githubUrl = document.createElement('a'), 
   followers = document.createElement('p'),
   following = document.createElement('p'),
   bio = document.createElement('p');
