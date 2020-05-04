@@ -5,7 +5,9 @@
 
 axios.get('https://api.github.com/users/maribelcuales')
   .then(response => {
-    console.log('data: ', response); 
+    console.log('data: ', response);
+    const myInfo = response.data;
+    console.log('UserInfo: ', myInfo);
 })
   .catch(error => {
     console.log('the data was not returned', error); 
