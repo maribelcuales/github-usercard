@@ -62,6 +62,9 @@ function githubCard(data) {
   location = document.createElement('p'),
   profile = document.createElement('p'),
   cardUrl = document.createElement('a'), 
+  followers = document.createElement('p'),
+  following = document.createElement('p'),
+  bio = document.createElement('p');
 
   return; 
 }
