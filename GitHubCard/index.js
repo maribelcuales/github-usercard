@@ -56,7 +56,7 @@ const followersArray = [];
 
 */
 
-function createCard(data) {
+function createCard(object) {
   const newCard = document.createElement('div'),
   cardImage = document.createElement('img'),
   cardInfo = document.createElement('div'),
@@ -85,16 +85,16 @@ function createCard(data) {
   cardName.classList.add('name');
   username.classList.add('username');
 
-  cardImage.src = data.avatar_url;
-  cardName.textContent = data.name;
-  username.textContent = data.login;
-  location.textContent = 'Location: ${data.location}';
+  cardImage.src = object.data.avatar_url;
+  cardName.textContent = object.data.name;
+  username.textContent = object.data.login;
+  location.textContent = `Location: ${object.data.location}`;
   profile.textContent = 'Profile: ';
-  githubUrl.href = data.html_url;
-  githubUrl.textContent = data.html_url; 
-  followers.textContent = 'Followers: ${data.followers}';
-  following.textContent = 'Following: ${data.following}'; 
-  bio.textContent = 'Bio: ${data.bio}';
+  githubUrl.href = object.data.html_url;
+  githubUrl.textContent = object.data.html_url; 
+  followers.textContent = `Followers: ${object.data.followers}`;
+  following.textContent = `Following: ${object.data.following}`; 
+  bio.textContent = `Bio: ${object.data.bio}`;
 
   return newCard; 
 }
