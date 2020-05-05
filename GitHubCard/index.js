@@ -56,7 +56,7 @@ const followersArray = [];
 
 */
 
-function githubCard(data) {
+function createCard(data) {
   const newCard = document.createElement('div'),
   cardImage = document.createElement('img'),
   cardInfo = document.createElement('div'),
@@ -96,7 +96,7 @@ function githubCard(data) {
   following.textContent = 'Following: ${data.following}'; 
   bio.textContent = 'Bio: ${data.bio}';
 
-  return; 
+  return newCard; 
 }
 
 /* List of LS Instructors Github username's: 
