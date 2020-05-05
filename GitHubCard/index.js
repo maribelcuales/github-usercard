@@ -5,9 +5,15 @@
 
 axios.get('https://api.github.com/users/maribelcuales')
   .then(response => {
+    // console.log(response);
     console.log('data: ', response);
     const myInfo = response.data;
     console.log('UserInfo: ', myInfo);
+    // console.log(myInfo.login);
+
+    // Step 4
+    const cardDetails = createCard(response);
+    cards.appendChild(cardDetails); 
 })
   .catch(error => {
     console.log('the data was not returned', error); 
@@ -23,6 +29,8 @@ axios.get('https://api.github.com/users/maribelcuales')
 /* Step 4: Pass the data received from Github into your function, 
            create a new component and add it to the DOM as a child of .cards
 */
+
+const cards = document.querySelector('.cards');
 
 /* Step 5: Now that you have your own card getting added to the DOM, either 
           follow this link in your browser https://api.github.com/users/<Your github name>/followers 
@@ -60,7 +68,7 @@ function createCard(object) {
   const newCard = document.createElement('div'),
   cardImage = document.createElement('img'),
   cardInfo = document.createElement('div'),
-  cardName = document.createElement('h3'); 
+  cardName = document.createElement('h3'),
   username = document.createElement('p'),
   location = document.createElement('p'),
   profile = document.createElement('p'),
@@ -98,6 +106,7 @@ function createCard(object) {
 
   return newCard; 
 }
+
 
 /* List of LS Instructors Github username's: 
   tetondan
