@@ -42,7 +42,25 @@ const cards = document.querySelector('.cards');
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = [
+  'tetondan',
+  'dustinmyers',
+  'justsml',
+  'luishrd',
+  'bigknell'
+];
+
+followersArray.forEach(user => {
+  axios
+  .get(`https://api.github.com/users/${user}`)
+  .then(response => {
+    console.log(response.data);
+    cards.appendChild(createCard(response));
+  })
+  .catch(error => {
+    console.log('there was an error getting data', error);
+  })
+})
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
@@ -98,8 +116,8 @@ function createCard(object) {
   username.textContent = object.data.login;
   location.textContent = `Location: ${object.data.location}`;
   profile.textContent = 'Profile: ';
-  githubUrl.href = object.data.html_url;
-  githubUrl.textContent = object.data.html_url; 
+  githubUrl.textContent = object.data.html_url;
+  githubUrl.href = object.data.html_url; 
   followers.textContent = `Followers: ${object.data.followers}`;
   following.textContent = `Following: ${object.data.following}`; 
   bio.textContent = `Bio: ${object.data.bio}`;
